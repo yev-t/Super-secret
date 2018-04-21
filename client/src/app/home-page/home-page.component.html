@@ -1,0 +1,15 @@
+<h3>These pets are looking for a home!</h3>
+<a [routerLink]="['new']">Add a pet to the shelter</a>
+<div *ngIf="pets">
+	<div *ngFor="let pet of pets">
+		<p>-----------------------</p>
+		<p>Name: {{pet.name}}</p>
+		<p>Type: {{pet.type}}</p>
+		<p>Description: {{pet.description}}</p>
+		<div *ngFor="let skill of pet.skills">
+			<p>Skill: {{skill}}</p>
+		</div>
+		<a type="submit" [routerLink]="['details/']+pet._id">Details</a>
+		<a type="submit" [routerLink]="['edit/']+pet._id">Edit</a>
+	</div>
+</div>

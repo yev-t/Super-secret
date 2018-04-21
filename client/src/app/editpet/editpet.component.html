@@ -1,0 +1,17 @@
+<h3>Update your pet</h3>
+{{ mypet | json }}
+{{ feedback | json }}
+
+<div *ngIf="mypet">
+	<form (submit)="edit_pet()">
+		Pet Name:<input [(ngModel)]="mypet.name" type="text" name="mypet.name"><br>
+		Pet Type:<input [(ngModel)]="mypet.type" type="text" name="mypet.type"><br>
+		Pet Description<input [(ngModel)]="mypet.description" type="text" name="mypet.description"><br>
+		Pet Skills:<br>
+		Skill 1<input [(ngModel)]="mypet.skills[0]" type="text" name="mypet.skills[0]"><br>
+		Skill 2<input [(ngModel)]="mypet.skills[1]" type="text" name="mypet.skills[1]"><br>
+		Skill 3<input [(ngModel)]="mypet.skills[2]" type="text" name="mypet.skills[2]"><br>
+		<input type="submit" Value="Update pet">
+		<button [routerLink]="['']">Cancel</button>
+	</form>
+</div>

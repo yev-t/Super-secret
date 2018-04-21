@@ -1,0 +1,16 @@
+{{ feedback | json }}
+
+<button [routerLink]="['']">Home</button>
+<div *ngIf="mypet">
+		<p>Name: {{mypet.name}}</p>
+		<p>Type: {{mypet.type}}</p>
+		<p>Description: {{mypet.description}}</p>
+		<div *ngFor="let skill of mypet.skills">
+			<p>Skill: {{skill}}</p>
+		</div>
+		<form (submit)="remove_pet()">
+			<button type="submit" >Adopt</button>
+		</form>
+</div>
+<!-- Needs like button that increments likes, and disappears after 'like' event -->
+<!-- Needs adopt button that removes pet from DB -->
